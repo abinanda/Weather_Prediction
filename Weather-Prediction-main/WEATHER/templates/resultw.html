@@ -1,0 +1,42 @@
+<html>
+	<head>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/Weather.css') }}"> 
+	   <title> Weather Prediction</title>
+	</head>
+
+
+<body>
+    <h1>STAY ALERT !!!</h1>
+    <div class="login center">
+       
+        <br>
+        <form action="{{ url_for('weather')}}" method="POST">
+            <h4>Enter Precipitation </h4>
+            <input type="text" name="Precipitation" placeholder="Precipitation" required="required"/>
+
+	<br>
+   	<br>
+
+            <h4>Enter Maximum Temperature </h4>
+            <input type="text" name="temp_max" placeholder="temp_max" required="required"/>
+            
+	<br>
+	<br>
+	    <h4>Enter Minimum Temperature </h4>
+            <input type="text" name="temp_min" placeholder="temp_min" required="required"/>
+            
+	<br>
+	<br>
+	    <h4>Enter Wind </h4>
+            <input type="text" name="wind" placeholder="wind" required="required"/>
+ 
+	    
+        <br>    
+
+            <button type="submit" class="btn btn-primary btn-block btn-large"> SUBMIT </button>
+        </form>
+        <br>
+        {{ prediction_text }}
+    </div>
+</body>
+</html>
